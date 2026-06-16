@@ -1,0 +1,386 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+font-family:'Inter',sans-serif;
+}
+
+/* OVERLAY */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    rgba(15,10,6,0.85),
+    rgba(15,10,6,0.95)
+  );
+
+  z-index: -1;
+}
+
+/* CONTEÚDO */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* TÍTULO */
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 8px;   
+    line-height: 1.1;     
+}
+
+.hero p {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+/* CONTAINER */
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.85);
+border-bottom:1px solid #c79a3b;
+z-index:1000;
+}
+
+.nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:70px;
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:22px;
+background:linear-gradient(90deg,#f5d07a,#c78a2c);
+-webkit-background-clip:text; 
+-webkit-text-fill-color:transparent;
+}
+
+/* MENU BASE */
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+/* LINKS */
+.menu a {
+    color: #aaa;
+    font-size: 14px;
+    text-decoration: none;
+    position: relative;
+    transition: 0.2s;
+
+    font-weight: 600; 
+}
+
+/* HOVER DOURADO */
+.menu a:hover {
+    color: #d4a03a;
+}
+
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg,#f5d07a,#c78a2c);
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    z-index: 1000;
+}
+
+/* CONTAINER */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+/* LOGO */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    background: linear-gradient(90deg,#f5d07a,#c78a2c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* MENU */
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+/* LINKS */
+.menu a {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 14px;
+    padding: 8px 0;
+    transition: 0.2s;
+}
+
+/* HOVER */
+.menu a:hover {
+    color: #f5d07a;
+}
+
+/* LINHA SUTIL */
+.menu a::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 1px;
+    background: #f5d07a;
+    transition: 0.2s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* SUBMENU  */
+.submenu {
+    position: absolute;
+    top: 115%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(15,15,15,0.65);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    min-width: 160px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-radius: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* ITENS */
+.submenu li a {
+    display: block;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: #aaa;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+/* HOVER  */
+.submenu li a:hover {
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    transform: translateX(3px);
+}
+
+
+/* ABRIR */
+.dropdown:hover .submenu {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+/* BANNER */
+
+.banner{
+    height: 650px;
+    background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+    url('orixas/xango.jfif');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid #c89b3c;
+}
+
+.banner-text h2{
+    font-size: 52px;
+    color: #d4a648;
+    margin-bottom: 10px;
+}
+
+.banner-text p{
+    font-size: 20px;
+    color: #f0f0f0;
+}
+
+/* CONTEÚDO */
+
+.content{
+    width: 85%;
+    max-width: 1100px;
+    margin: 70px auto;
+}
+
+.content h2{
+    font-size: 38px;
+    color: #d4a648;
+    margin-bottom: 20px;
+    border-left: 6px solid #d4a648;
+    padding-left: 15px;
+}
+
+.content p{
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+/* IMAGENS */
+
+.content img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 25px 0;
+    border: 3px solid #c89b3c;
+    transition: 0.4s;
+    filter: brightness(0.85);
+}
+
+.content img:hover{
+    transform: scale(1.02);
+    filter: brightness(1);
+}
+
+/* FOOTER */
+
+.footer{
+    background: linear-gradient(
+        180deg,
+        #0b0b0b 0%,
+        #1a1410 40%,
+        #3b2a1c 70%,
+        #5a3d26 100%
+    );
+    border-top: 1px solid rgba(212,160,58,0.2);
+    padding: 45px 20px 25px;
+}
+
+.footer-container{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+/* LOGO */
+
+.footer-logo h2{
+    font-family:'Playfair Display',serif;
+    font-size: 32px;
+    background: linear-gradient(90deg,#f5d07a,#c78a2c);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.footer-logo p{
+    color:#b89b6b;
+    font-size:14px;
+    letter-spacing:2px;
+    text-align:center;
+}
+
+
+.footer-bottom{
+    width:100%;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.footer-bottom p{
+    text-align:center;
+    color:#8f7b5b;
+    font-size:13px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width: 900px){
+
+    header{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a{
+        margin: 0 10px;
+    }
+
+    .banner-text h2{
+        font-size: 36px;
+    }
+
+    .content h2{
+        font-size: 30px;
+    }
+
+    .content p{
+        font-size: 16px;
+    }
+
+    .content img{
+        height: 250px;
+    }
+
+}
